@@ -31,25 +31,19 @@ class _LoaderStateState extends State<LoaderState>
     return Material(
         elevation: 20,
         borderRadius: BorderRadius.circular(10.0),
-        child: Container(
-          // color: Color(0XFF0000FFFF),
-            width: 110,
-            height: 110,
-            decoration: BoxDecoration(
-                color: Color(0XFF0000FFFF),
-                borderRadius: BorderRadius.circular(8.0)),
-            child: Container(
-              margin: EdgeInsets.only(right: 20.0),
-              child: Gif(
-                image: AssetImage("images/dentskanload.gif"),
-                controller:
-                controller1, // if duration and fps is null, original gif fps will be used.
-                autostart: Autostart.loop,
-                onFetchCompleted: () {
-                  controller1.reset();
-                  controller1.forward();
-                },
-              ),
-            )));
+
+
+            child: Gif(
+              width: 100,
+              height: 100,
+              image: const AssetImage("images/loading.gif"),
+              controller:
+              controller1, // if duration and fps is null, original gif fps will be used.
+              autostart: Autostart.loop,
+              onFetchCompleted: () {
+                controller1.reset();
+                controller1.forward();
+              },
+            ));
   }
 }

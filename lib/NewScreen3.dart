@@ -7,10 +7,10 @@ class NewScreen3 extends StatefulWidget {
   const NewScreen3({Key? key}) : super(key: key);
 
   @override
-  State<NewScreen3> createState() => _NewScreenState();
+  State<NewScreen3> createState() => _NewScreen3State();
 }
 
-class _NewScreenState extends State<NewScreen3> {
+class _NewScreen3State extends State<NewScreen3> {
   TextEditingController textEditingController = TextEditingController();
 
   @override
@@ -20,6 +20,12 @@ class _NewScreenState extends State<NewScreen3> {
       appBar: AppBar(
         backgroundColor: Colors.green,
         title: const Text('TNAU'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: ()   {
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>const HomeScreen()));
+          },
+        ),
       ),
       body: Center(
 
@@ -41,22 +47,14 @@ class _NewScreenState extends State<NewScreen3> {
                         backgroundColor: Colors.lightBlue[500],
                         radius: 50,
                         child: const CircleAvatar(
-                          backgroundImage: NetworkImage(
-                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnsCehUaKLc_r0Ce94G0sikeMUrjwgJ4k5REnH-TeTE5vxqYVJN8d53sUWc0qGcKIdJUw&usqp=CAU"), //NetworkImage
+                          backgroundImage:  AssetImage("images/5.png"),
                           radius: 100,
                         ), //CircleAvatar
                       ), //CircleAvatar
                       const SizedBox(
                         height: 10,
                       ), //SizedBox
-                      Text(
-                        'Preventive Measures',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.green[900],
-                          fontWeight: FontWeight.w500,
-                        ), //Textstyle
-                      ),
+
                       const SizedBox(
                         height: 10,
                       ),
@@ -72,73 +70,7 @@ class _NewScreenState extends State<NewScreen3> {
                       const SizedBox(
                         height: 10,
                       ), //SizedBox
-                      const Text(
-                        '* Cover the soil under the plants with mulch, such as fabric, straw, plastic mulch, or dried leaves',
 
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      //Text
-                      const Text(
-                        '* Water at the base of each plant, using drip irrigation, a soaker hose, or careful hand watering.',
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-
-                      const Text(
-                        '* Increase airflow by staking or trellising, removing weeds, and spacing plants adequately apart',
-
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        '* Pruning the bottom leaves can also prevent early blight spores from splashing up from the soil onto leaves.',
-
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        '* Pinch off leaves with leaf spots and bury them in the compost pile.',
-
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        '* If you touch infected leaves, wash your hands well before working in healthy tomato plants. If you use pruning tools, wash and sanitize them after touching infected plants.',
-
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ), //SizedBox
                       SizedBox(
                         width: 125,
 
@@ -148,10 +80,10 @@ class _NewScreenState extends State<NewScreen3> {
                           style: ButtonStyle(
                               backgroundColor:
                               MaterialStateProperty.all(Colors.green)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4),
-                            child: Row(
-                              children: const [
+                          child: const Padding(
+                            padding:   EdgeInsets.all(4),
+                            child:   Row(
+                              children:  [
                                 Icon(Icons.touch_app),
                                 Text('Explore')
                               ],

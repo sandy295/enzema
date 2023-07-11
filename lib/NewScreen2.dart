@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:tnau_f/HomeScreen.dart';
 
+
 import 'constant.dart';
 
 class NewScreen2 extends StatefulWidget {
   const NewScreen2({Key? key}) : super(key: key);
 
   @override
-  State<NewScreen2> createState() => _NewScreenState();
+  State<NewScreen2> createState() => _NewScreen2State();
 }
 
-class _NewScreenState extends State<NewScreen2> {
+class _NewScreen2State extends State<NewScreen2> {
   TextEditingController textEditingController = TextEditingController();
 
   @override
@@ -20,11 +21,15 @@ class _NewScreenState extends State<NewScreen2> {
       appBar: AppBar(
         backgroundColor: Colors.green,
         title: const Text('TNAU'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: ()   {
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>const HomeScreen()));
+          },
+        ),
       ),
       body: Center(
-
         child: SingleChildScrollView(
-
           child: Card(
             elevation: 50,
             shadowColor: Colors.black,
@@ -41,8 +46,7 @@ class _NewScreenState extends State<NewScreen2> {
                         backgroundColor: Colors.lightBlue[500],
                         radius: 50,
                         child: const CircleAvatar(
-                          backgroundImage: NetworkImage(
-                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnsCehUaKLc_r0Ce94G0sikeMUrjwgJ4k5REnH-TeTE5vxqYVJN8d53sUWc0qGcKIdJUw&usqp=CAU"), //NetworkImage
+                          backgroundImage:  AssetImage("images/5.png"),  //NetworkImage
                           radius: 100,
                         ), //CircleAvatar
                       ), //CircleAvatar
@@ -61,7 +65,7 @@ class _NewScreenState extends State<NewScreen2> {
                         height: 10,
                       ),
                       Text(
-                        '$str',
+                        str!=null?'$str':'',
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.green[900],
@@ -73,94 +77,502 @@ class _NewScreenState extends State<NewScreen2> {
                         height: 10,
                       ), //SizedBox
                       const Text(
-                        '* Cover the soil under the plants with mulch, such as fabric, straw, plastic mulch, or dried leaves',
+                        'SYMPTOMS',
 
                         style: TextStyle(
                           fontSize: 15,
-                          color: Colors.green,
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
                         ), //Textstyle
+                      ),
+
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Stunted plant growth',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Chlorotic or necrotic rings on leaves',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Thickening of veins and bronzing of young leaves',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Necrotic patches on petiole and stems',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Growing twigs die-back and wilt',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Yellow ringspots with concentric circular markings on fruits',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Disease transmitted by thrips',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        'RECOMMENDATIONS',
+
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
+                        ), //Textstyle
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Use of healthy seedlings for transplanting',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Soil application of Bacillus subtilis @ 2.5 kg/ha',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Rogue out infected plants upto 45 days of planting',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Install yellow sticky traps @ 12 Nos./ha',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Spray any one of the following insecticides:-',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '     1) Cyantraniliprole 10.26 OD @ 900 ml/ha (or) ',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '     2) Thiamethoxam 70 WS @ 300 ml/ha (or) ',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '     3) Imidacloprid 17.8 SL @ 250 ml/ha ',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        'தக்காளி புள்ளி வாடல் /மொட்டுக் கருகல் நோய்',
+
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.w500,
+                        ), //Textstyle
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),//S// zedBox
+
+                      const Text(
+                        'அறிகுறிகள்',
+
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
+                        ), //Textstyle
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),//SizedBox
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* நோய் பாதிக்கப்பட்ட செடிகள் வளர்ச்சி குன்றி காணப்படும்.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       //Text
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* இலைகள் வெளிர் பச்சை புள்ளியமைப்புடன் காணப்படும்.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* இளம் இலைகளில் நரம்பு தடித்து பழுப்பு நிறமாக காணப்படும்.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* இலைக்காம்பு மற்றும் தண்டு பகுதிகளில் கருப்பு நிற திட்டுகள் காணப்படும்.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* செடியின் நுனி வாடி கருகும்.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* பழங்களில் மஞ்சள் நிற வளைப்புள்ளிகள் காணப்படும்.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* இந்நோய் இலைப்பேன் மூலம் பரவுகிறது.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
                       const Text(
-                        '* Water at the base of each plant, using drip irrigation, a soaker hose, or careful hand watering.',
+                        'மேலாண்மை',
+
                         style: TextStyle(
                           fontSize: 15,
-                          color: Colors.green,
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
                         ), //Textstyle
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-
-                      const Text(
-                        '* Increase airflow by staking or trellising, removing weeds, and spacing plants adequately apart',
-
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* நோயற்ற தரமான தக்காளி நாற்றுகளை பயன்படுத்தவும்',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-                      const Text(
-                        '* Pruning the bottom leaves can also prevent early blight spores from splashing up from the soil onto leaves.',
-
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* விதைகளை பேசில்லஸ் சப்டிலிஸ் உயிர்கொல்லி கலவையுடன் 10கிராம் கிலோ என்ற அனயில் விதை நேர்த்தி செய்யவும்',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-                      const Text(
-                        '* Pinch off leaves with leaf spots and bury them in the compost pile.',
-
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* பேசில்லஸ் சப்டிலியிகொல்லி கலவையை 2.50லோஎக்டர் என்ற அளவில் மண்யில் இடுதல்.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-                      const Text(
-                        '* If you touch infected leaves, wash your hands well before working in healthy tomato plants. If you use pruning tools, wash and sanitize them after touching infected plants.',
-
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* பாதிக்கப்பட்ட செடிகளை 45 நாட்களுக்குள் பிடுங்கி அழித்தல்.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
-                      ), //SizedBox
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* எக்டருக்கு 12 என்ற எண்ணிக்கையில் மஞ்சள் ஒட்டுப் பொறிகளை அமைத்தல்.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* தடுப்பு பயிராக சோளம், மக்காச்சோளம் அல்லது கம்பு பயிரிடவும்.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* பின்வரும் பூச்சிக்கொல்லிகளில் ஏதேனும் ஒன்றை தெளிக்கவும்:-',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '     1) சையாண்ட்ரணிலிப்ரோல் 10.26 OD @ 900 மிலி/எக்டர் (அல்லது)',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '     2) தையோமீத்தாக்சம் 70 WS @ 300 மிலி எக்டர் (அல்லது)',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '     3) இமிடாகுளோப்ரிட்17.8 SL @ 250 மிலி எக்டர்',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                       //SizedBox
                       SizedBox(
                         width: 125,
-
                         child: ElevatedButton(
-                          onPressed: () => Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) => const HomeScreen())),
+                          onPressed: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => const HomeScreen())),
                           style: ButtonStyle(
                               backgroundColor:
-                              MaterialStateProperty.all(Colors.green)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4),
+                                  MaterialStateProperty.all(Colors.green)),
+                          child: const Padding(
+                            padding:   EdgeInsets.all(4),
                             child: Row(
-                              children: const [
+                              children:   [
                                 Icon(Icons.touch_app),
                                 Text('Explore')
                               ],
                             ),
                           ),
                         ),
-
-
-
                       ) //SizedBox
                     ],
                   ),

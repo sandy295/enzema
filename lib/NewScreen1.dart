@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tnau_f/HomeScreen.dart';
 
+
 import 'constant.dart';
 
 class NewScreen1 extends StatefulWidget {
@@ -20,7 +21,14 @@ class _NewScreenState extends State<NewScreen1> {
       appBar: AppBar(
         backgroundColor: Colors.green,
         title: const Text('TNAU'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: ()   {
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>const HomeScreen()));
+          },
+          ),
       ),
+
       body: Center(
 
         child: SingleChildScrollView(
@@ -41,8 +49,7 @@ class _NewScreenState extends State<NewScreen1> {
                         backgroundColor: Colors.lightBlue[500],
                         radius: 50,
                         child: const CircleAvatar(
-                          backgroundImage: NetworkImage(
-                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnsCehUaKLc_r0Ce94G0sikeMUrjwgJ4k5REnH-TeTE5vxqYVJN8d53sUWc0qGcKIdJUw&usqp=CAU"), //NetworkImage
+                          backgroundImage:  AssetImage("images/5.png"),
                           radius: 100,
                         ), //CircleAvatar
                       ), //CircleAvatar
@@ -50,7 +57,7 @@ class _NewScreenState extends State<NewScreen1> {
                         height: 10,
                       ), //SizedBox
                       Text(
-                        'Recommendations',
+                        'Preventive Measures',
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.green[900],
@@ -61,7 +68,7 @@ class _NewScreenState extends State<NewScreen1> {
                         height: 10,
                       ),
                       Text(
-                        '$str',
+                        str!=null?'$str':'',
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.green[900],
@@ -71,74 +78,314 @@ class _NewScreenState extends State<NewScreen1> {
                       //Text
                       const SizedBox(
                         height: 10,
-                      ), //SizedBox
+                      ),
                       const Text(
-                        '* Cover the soil under the plants with mulch, such as fabric, straw, plastic mulch, or dried leaves',
+                        'SYMPTOMS',
 
                         style: TextStyle(
                           fontSize: 15,
-                          color: Colors.green,
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
                         ), //Textstyle
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),//SizedBox
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Infections start as small brown spots on older leaves, quickly increasing in size',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       //Text
-                      const Text(
-                        '* Water at the base of each plant, using drip irrigation, a soaker hose, or careful hand watering.',
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Brown irregular spots with concentric rings with yellow margins on leaves',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-
-                      const Text(
-                        '* Increase airflow by staking or trellising, removing weeds, and spacing plants adequately apart',
-
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        '* Pruning the bottom leaves can also prevent early blight spores from splashing up from the soil onto leaves.',
-
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                        ), //Textstyle
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Brown elongated concentric rings on stem and fruits',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       const Text(
-                        '* Pinch off leaves with leaf spots and bury them in the compost pile.',
+                        'RECOMMENDATIONS',
 
                         style: TextStyle(
                           fontSize: 15,
-                          color: Colors.green,
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
                         ), //Textstyle
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Removal and destruction of crop debris',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Crop rotation',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* Spray any one of the following fungicide:-',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '     1) Hexaconazole 5% SC @ 1ml/litre (or)',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '     2) Propiconazole 25% EC @  1ml/litre (or)',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '     3) Metiram 70% WG @ 5g/litre',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),//Si
+                      const Text(
+                        'முன்பருவ இலைக்கருகல்',
+
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.w500,
+                        ), //Textstyle
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),//S// zedBox
+
+                      const Text(
+                        'அறிகுறிகள்',
+
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
+                        ), //Textstyle
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),//SizedBox
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* இந்நோய் இலைகளை தாக்கும்பொழுது இலையில் பழுப்பு நிற புள்ளிகள் தோன்றி கருகத் தொடங்கும்.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      //Text
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* புள்ளிகள் பெரிதாகி பாதிக்கப்பட்ட பகுதிகளில் வளையங்கள் காணப்படும்',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* பாதிக்கப்பட்ட திகளை சுற்றியுள்ள பகுதிகள் மஞ்சள் நிறமாகும்.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* இந்நோய் இலையைப் போன்றே நண்டு மற்றும் பழங்களை பாதிக்கிறது',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       const Text(
-                        '* If you touch infected leaves, wash your hands well before working in healthy tomato plants. If you use pruning tools, wash and sanitize them after touching infected plants.',
+                        'மேலாண்மை',
 
                         style: TextStyle(
                           fontSize: 15,
-                          color: Colors.green,
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
                         ), //Textstyle
                       ),
                       const SizedBox(
                         height: 10,
-                      ), //SizedBox
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* நோய் தாக்கப்பட்ட பயிரின் கழிவுகளை அகற்றி அழித்தல்',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* பயிர் சுழற்சி முறைகளை பின்பற்றுதல்',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '* பின்வரும் பூஞ்சாணக்கொல்லிகளில் ஏதேனும் ஒன்றை தெளிக்கவும்:-',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '     1) ஹெக்ஸகோனசோல் 5% SC @ 1மிலி/லிட்டர் (அல்லது)',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '     2) புரோபிகோனசோல் 25% EC @ 1மிலி லிட்டர் (அல்லது)',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '     3) மெட்டிராம் 70% WG @ 5 கிராம் /லிட்டர்',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.green,
+                          ), //Textstyle
+                        ),
+                      ),
                       SizedBox(
                         width: 125,
 
@@ -148,10 +395,10 @@ class _NewScreenState extends State<NewScreen1> {
                           style: ButtonStyle(
                               backgroundColor:
                               MaterialStateProperty.all(Colors.green)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4),
+                          child: const Padding(
+                            padding:  EdgeInsets.all(4),
                             child: Row(
-                              children: const [
+                              children: [
                                 Icon(Icons.touch_app),
                                 Text('Explore')
                               ],
