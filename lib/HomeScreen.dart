@@ -117,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     print(filename);
     print("Making http request");
-    final String baseurl = "http://192.168.77.5/upload.php";
+    final String baseurl = "http://agiot.tnau.ac.in/upload.php";
     FormData formdata = FormData.fromMap({
       "file": await MultipartFile.fromFile(
           file.path,
@@ -170,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future loadModel() async {
 
-    String pathObjectDetectionModel = "assets/models/yolov5s.torchscript";
+    String pathObjectDetectionModel = "assets/models/12.torchscript";
     try {
       _objectModel = await FlutterPytorch.loadObjectDetectionModel(
           pathObjectDetectionModel, 3, 640, 640,
