@@ -52,8 +52,7 @@ dev_dependencies:
   url_launcher: ^6.1.10
   permission_handler: ^10.4.1
   flutter_image_compress: ^2.0.3
-
-
+  pytorch_lite: ^4.2.4
   dio: ^5.2.1+1
   http: ^1.1.0
 
@@ -77,6 +76,7 @@ flutter:
     - images/
     - assets/models/12.torchscript
     - assets/models/yolov5s.torchscript
+    - assets/models/yolov8s.torchscript
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

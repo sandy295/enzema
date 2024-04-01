@@ -45,7 +45,7 @@ class _HomeScreenState extends State<Home> {
                             ),
                             const SizedBox(height: 12),
                             const Text(
-                              "PlantroX",
+                              "EnzemaDetect",
                               style: TextStyle(fontSize: 25,color: Colors.blue),
                             ),
                             const SizedBox(height: 22),
@@ -59,7 +59,7 @@ class _HomeScreenState extends State<Home> {
                             ),
                             const ListTile(
                               leading: Icon(Icons.check),
-                              title: Text('Sustainable Agriculture'),
+                              title: Text('Sustainable '),
                             ),
                             const ListTile(
                               leading: Icon(Icons.check),
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<Home> {
                             ),
                             const ListTile(
                               leading: Icon(Icons.email),
-                              title: Text('info@srec.ac.in'),
+                              title: Text('infooooooo@srec.ac.in'),
                             ),
                             
 

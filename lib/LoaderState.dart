@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:gif/gif.dart';
-
 class LoaderState extends StatefulWidget {
   const LoaderState({super.key});
 
@@ -11,18 +8,14 @@ class LoaderState extends StatefulWidget {
 
 class _LoaderStateState extends State<LoaderState>
     with TickerProviderStateMixin {
-  late final GifController controller1;
-
   @override
   void initState() {
     // TODO: implement initState
-    controller1 = GifController(vsync: this);
     super.initState();
   }
 
   @override
   void dispose() {
-    controller1.dispose();
     super.dispose();
   }
 
@@ -31,19 +24,8 @@ class _LoaderStateState extends State<LoaderState>
     return Material(
         elevation: 20,
         borderRadius: BorderRadius.circular(10.0),
-
-
-            child: Gif(
-              width: 100,
-              height: 100,
-              image: const AssetImage("images/loading.gif"),
-              controller:
-              controller1, // if duration and fps is null, original gif fps will be used.
-              autostart: Autostart.loop,
-              onFetchCompleted: () {
-                controller1.reset();
-                controller1.forward();
-              },
+            child: ListTile(
+              leading: const Icon(Icons.lock_clock),
             ));
   }
 }
