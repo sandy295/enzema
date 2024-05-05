@@ -22,7 +22,7 @@ class _HomeScreenState extends State<Home> {
                 Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>const HomeScreen()));
           },
         ),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.cyan,
         title: const Text('HOME'),
       ),
       body: SingleChildScrollView(
@@ -39,31 +39,31 @@ class _HomeScreenState extends State<Home> {
                               alignment: Alignment.center,
                               child: CircleAvatar(
                                 radius: 45,
-                                backgroundImage: AssetImage("images/2.png"),
+                                backgroundImage: AssetImage("2.png"),
                                  
                               ),
                             ),
                             const SizedBox(height: 12),
                             const Text(
-                              "EnzemaDetect",
-                              style: TextStyle(fontSize: 25,color: Colors.blue),
+                              "EczemaDetect",
+                              style: TextStyle(fontSize: 25,color: Colors.black),
                             ),
                             const SizedBox(height: 22),
                             Text(
-                              '         A cutting-edge mobile app designed to empower farmers with the foresight to protect their crops from devastating diseases',
+                              '         Our App provides an intuitive platform for accurately Classifying Different Stages of Eczema',
                               style: Theme.of(context).textTheme.bodyLarge,
                             ),
                             const ListTile(
                               leading: Icon(Icons.check),
-                              title: Text('Early Detection'),
+                              title: Text('Eczema Stage Identification'),
                             ),
                             const ListTile(
                               leading: Icon(Icons.check),
-                              title: Text('Sustainable '),
+                              title: Text('User-Friendly Interface '),
                             ),
                             const ListTile(
                               leading: Icon(Icons.check),
-                              title: Text('Increased Yields'),
+                              title: Text('Flexibility'),
                             ),
                             const SizedBox(height: 28),
                             Text(

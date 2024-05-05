@@ -20,7 +20,7 @@ class _NewScreenState extends State<NewScreen1> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: const Text('TNAU'),
+        title: const Text('Eczema'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: ()   {

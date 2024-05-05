@@ -4,16 +4,11 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
-import 'package:tnau_f/Crops.dart';
-import 'package:tnau_f/NewScreen1.dart';
-import 'package:tnau_f/NewScreen2.dart';
-import 'package:tnau_f/NewScreen3.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:pytorch_lite/pytorch_lite.dart';
 import 'LoaderState.dart';
 import 'constant.dart';
 import 'Home.dart';
-import 'package:flutter_image_compress/flutter_image_compress.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
   @override
@@ -24,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   late ModelObjectDetection _objectModelYoloV8;
   String? _imagePrediction;
   File? _image;
-  ImagePicker _picker = ImagePicker();
+  final ImagePicker _picker = ImagePicker();
   bool objectDetection = false;
   List<ResultObjectDetection?> objDetect = [];
   bool firststate = false;
@@ -89,8 +84,34 @@ class _HomeScreenState extends State<HomeScreen> {
     });
     //pick an image
 
-    final XFile? image = await _picker.pickImage(source: ImageSource.camera);
-
+    // final XFile? image = await _picker.pickImage(source: ImageSource.camera);
+    final XFile? image = await showDialog<XFile>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Pick an Image"),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                GestureDetector(
+                  child: Text("Camera"),
+                  onTap: () async {
+                    Navigator.pop(context, await _picker.pickImage(source: ImageSource.camera));
+                  },
+                ),
+                Padding(padding: EdgeInsets.all(8.0)),
+                GestureDetector(
+                  child: Text("Gallery"),
+                  onTap: () async {
+                    Navigator.pop(context, await _picker.pickImage(source: ImageSource.gallery));
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
     // objDetect = await _objectModel.getImagePrediction(
     //     await File(image!.path).readAsBytes(),
     //     minimumScore: 0.1,
@@ -99,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
         await File(image!.path).readAsBytes(),
         minimumScore: 0.1,
         iOUThreshold: 0.3);
-    objDetect.forEach((element) {
+    for (var element in objDetect) {
       str=element?.className;
       val=element?.classIndex;
       print(val);
@@ -116,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
           "bottom": element?.rect.bottom,
         },
       });
-    });
+    }
     scheduleTimeout(5 * 1000);
     setState(() {
       _image = File(image.path);
@@ -125,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("EnzemaDetect")),
+      appBar: AppBar(title: const Text("EczemaDetect")),
       backgroundColor: Colors.white,
       drawer: Drawer(
 
@@ -135,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.cyan,
               ),
                 margin: EdgeInsets.all(0.0),
                 padding: EdgeInsets.all(0.0),
@@ -147,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(height: 12),
                   Text(
-                      "EnzemaDetect",
+                      "EczemaDetect",
                       style: TextStyle(fontSize: 25,color: Colors.white),
                   ),
 
@@ -181,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
               !firststate
                   ? !message ? const LoaderState() : const Text("Select the Camera to Begin Detections")
                   : Expanded(
-                child: Container(
+                child: SizedBox(
                     height: 5,
                     width: 300,
                     child:
